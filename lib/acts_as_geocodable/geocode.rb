@@ -2,6 +2,8 @@ class Geocode < ActiveRecord::Base
   has_many :geocodings, dependent: :destroy
 
   validates_uniqueness_of :query
+  
+  attr_accessible :latitude, :longitude, :query, :street, :locality, :region, :postal_code, :country, :precision
 
   cattr_accessor :geocoder
 
